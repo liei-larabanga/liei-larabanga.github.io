@@ -1,20 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Liei-Larabanga</title>
-    <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
-    <style>
-        html, body {
-            margin: 0;
-            height: 100%;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Liei-Larabanga</title>
+  
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+
+  <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' />
+  <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hanken" type="text/css"/>
+  
+  <style>
+    html, body {
+      font-family: 'HankenBook';
+      margin: 0;
+      height: 100%;
+    }
+    #header {
+      padding:20px 20px 0px;
+      height: 80px;
+    }
+    @media only screen and (max-width: 500px) {
+      #header h1 {
+        font-size: 2rem;
+      }
+    }
+    #map {
+      height: calc(100% - 80px);
+    }
+  </style>
 </head>
-<body id='map'>
-<script>
+<body>
+  <div id='header'>
+    <h1>Liei-Larabanga</h1>
+  </div>
+  <div id='map'></div>
+  
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  
+  
+  <script>
     var map = new mapboxgl.Map({
         container: 'map', // id of HTML element containing the map
         style: 'https://openmaptiles.github.io/osm-bright-gl-style/style-cdn.json', // Style location
@@ -26,6 +56,6 @@
     });
 
     map.addControl(new mapboxgl.NavigationControl());
-</script>
+  </script>
 </body>
 </html>
