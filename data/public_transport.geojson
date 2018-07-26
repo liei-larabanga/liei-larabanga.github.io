@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "id": "way\/193100888", "properties": { "id": "way\/193100888", "aeroway": "runway", "airfield": null, "highway": null, "description": null }, "geometry": { "type": "LineString", "coordinates": [ [ -1.8292905, 9.2438988 ], [ -1.8372376, 9.2363253 ] ] } },
+{ "type": "Feature", "id": "node\/2036195266", "properties": { "id": "node\/2036195266", "aeroway": null, "airfield": "abandoned", "highway": null, "description": null }, "geometry": { "type": "Point", "coordinates": [ -1.8373724, 9.2361862 ] } },
+{ "type": "Feature", "id": "node\/5674937891", "properties": { "id": "node\/5674937891", "aeroway": null, "airfield": null, "highway": "bus_stop", "description": null }, "geometry": { "type": "Point", "coordinates": [ -1.8599968, 9.2195414 ] } },
+{ "type": "Feature", "id": "node\/5674937892", "properties": { "id": "node\/5674937892", "aeroway": null, "airfield": null, "highway": "bus_stop", "description": null }, "geometry": { "type": "Point", "coordinates": [ -1.8579327, 9.2173962 ] } },
+{ "type": "Feature", "id": "node\/5674937893", "properties": { "id": "node\/5674937893", "aeroway": null, "airfield": null, "highway": "bus_stop", "description": null }, "geometry": { "type": "Point", "coordinates": [ -1.8579099, 9.2183718 ] } },
+{ "type": "Feature", "id": "node\/5674937894", "properties": { "id": "node\/5674937894", "aeroway": null, "airfield": null, "highway": "bus_stop", "description": null }, "geometry": { "type": "Point", "coordinates": [ -1.8590364, 9.2194137 ] } }
+]
+}

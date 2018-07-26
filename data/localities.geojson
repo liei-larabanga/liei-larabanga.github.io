@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "id": "node\/1783595790", "properties": { "id": "node\/1783595790", "place": "village", "name": "Mognori", "description": null, "note": null }, "geometry": { "type": "Point", "coordinates": [ -1.7758564, 9.2900413 ] } },
+{ "type": "Feature", "id": "node\/2036030010", "properties": { "id": "node\/2036030010", "place": "village", "name": null, "description": null, "note": null }, "geometry": { "type": "Point", "coordinates": [ -1.8962752, 9.1169094 ] } },
+{ "type": "Feature", "id": "node\/2036030011", "properties": { "id": "node\/2036030011", "place": "village", "name": null, "description": null, "note": null }, "geometry": { "type": "Point", "coordinates": [ -1.9536429, 9.1195466 ] } },
+{ "type": "Feature", "id": "node\/2036195351", "properties": { "id": "node\/2036195351", "place": "village", "name": "Mole Village", "description": null, "note": null }, "geometry": { "type": "Point", "coordinates": [ -1.8519632, 9.2643847 ] } },
+{ "type": "Feature", "id": "node\/2145887577", "properties": { "id": "node\/2145887577", "place": "village", "name": "Nabori", "description": null, "note": null }, "geometry": { "type": "Point", "coordinates": [ -1.8506723, 9.1534398 ] } },
+{ "type": "Feature", "id": "node\/5531915914", "properties": { "id": "node\/5531915914", "place": "town", "name": "Larabanga", "description": null, "note": null }, "geometry": { "type": "Point", "coordinates": [ -1.858464, 9.2193779 ] } }
+]
+}

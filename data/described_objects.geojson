@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"features": [
+{ "type": "Feature", "id": "way\/217417087", "properties": { "id": "way\/217417087", "description": "Central service and visitor area" }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -1.8512624, 9.2661049 ], [ -1.8535828, 9.2660498 ], [ -1.8544477, 9.2657374 ], [ -1.854925, 9.2648643 ], [ -1.8564358, 9.2623961 ], [ -1.8568867, 9.2602195 ], [ -1.8546481, 9.2584399 ], [ -1.8505246, 9.2598227 ], [ -1.8498939, 9.2602137 ], [ -1.8504241, 9.2635249 ], [ -1.8508803, 9.2659909 ], [ -1.8512624, 9.2661049 ] ] ] } },
+{ "type": "Feature", "id": "way\/315268984", "properties": { "id": "way\/315268984", "description": "Oldest Sudanese-style mosque in Ghana." }, "geometry": { "type": "Polygon", "coordinates": [ [ [ -1.8600026, 9.2203953 ], [ -1.860006, 9.2202642 ], [ -1.85988, 9.220261 ], [ -1.8598766, 9.2203921 ], [ -1.8600026, 9.2203953 ] ] ] } },
+{ "type": "Feature", "id": "node\/5604403102", "properties": { "id": "node\/5604403102", "description": "LECLARA is a community organization dedicated to social and economic development in Larabanga." }, "geometry": { "type": "Point", "coordinates": [ -1.8573647, 9.2163054 ] } }
+]
+}
