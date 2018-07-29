@@ -14,8 +14,13 @@ $(function() {
 
   map.addControl(new mapboxgl.NavigationControl());
 
+  //var pitch = new PitchControl();
+  //map.addControl(pitch, 'top-right');
+  map.addControl(new PitchControl());
+
   //map.addControl(new SidebarMapboxgl('sidebar'), 'top-left');
-  var sidebar = new SidebarMapboxgl('sidebar');
+  //var sidebar = new SidebarMapboxgl('sidebar');
+  var sidebar = turboSidebar('sidebar');
 
   //var sidebar = L.control.sidebar('sidebar').addTo(map);
 });
