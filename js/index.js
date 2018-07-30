@@ -1,3 +1,8 @@
+//TODO: define sidebar structure
+//TODO: create event manager
+//TODO: build get data from vector tile features
+//TODO: create own vector tiles & styles... uff
+//TODO:
 
 var map;
 
@@ -13,10 +18,9 @@ $(function() {
   });
 
   map.addControl(new mapboxgl.NavigationControl());
-
-  //var pitch = new PitchControl();
-  //map.addControl(pitch, 'top-right');
-  map.addControl(new PitchControl());
+  map.addControl(new mapboxgl.ScaleControl(), 'bottom-right');
+  //custom pitch control
+  map.addControl(new mapboxgl.PitchControl());
 
   //map.addControl(new SidebarMapboxgl('sidebar'), 'top-left');
   //var sidebar = new SidebarMapboxgl('sidebar');
