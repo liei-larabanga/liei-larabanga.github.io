@@ -41,18 +41,78 @@ $(function() {
       });
     }
     
+    // Find the index of the first symbol layer in the map style
+    //var firstSymbolId;
+    //for (var i = 0; i < layers.length; i++) {
+    //    if (layers[i].type === 'symbol') {
+    //        firstSymbolId = layers[i].id;
+    //        break;
+    //    }
+    //}
+
     for (var i=0; i < geojsonStyles.length; i++) {
       map.addLayer(geojsonStyles[i]);
+      //map.addLayer(geojsonStyles[i], firstSymbolId);
     }
   });
   */
 
-  //map.on('mousemove', function (e) {
-  //  var features = map.queryRenderedFeatures(e.point);
-  //  
-  //});
+  var interactionLayers = ['poi_z14','poi_z15','poi_z16','poi_transit']
+  map.on('mousemove', function (e) {
+    var features = getMouseFeatures(e, {
+      layers: interactionLayers
+    });
+    
+    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+  });
+  
+  map.on('click', function (e) {
+    var features = getMouseFeatures(e, {
+      layers: interactionLayers
+    });
+    if (features.length) {
+      var feature = features[0];
+      var popup = new mapboxgl.Popup({ offset: [0, -15] })
+      .setLngLat(feature.geometry.coordinates)
+      .setHTML('<h3>' + feature.properties.name + '</h3><p>' + feature.properties.class + '</p>')
+      .setLngLat(feature.geometry.coordinates)
+      .addTo(map);
+    }
+
+  })
+  
 
 });
+
+function getMouseFeatures(e, opts) {
+  opts = opts || {};
+  var features;
+  var queryBox;
+  var queryParameters;
+  var defaults = {
+    threshold: 5
+  }
+  for (var key in defaults) {
+    opts[key] = opts[key] || defaults[key];
+  }
+  queryBox = [
+    [
+      e.point.x - opts.threshold,
+      e.point.y + opts.threshold
+    ], // bottom left (SW)
+    [
+      e.point.x + opts.threshold,
+      e.point.y - opts.threshold
+    ] // top right (NE)
+  ];
+  queryParameters = {};
+  if (opts.layers) {
+    queryParameters.layers = opts.layers;
+  }
+  features = map.queryRenderedFeatures(queryBox, queryParameters) || [];
+  return features;
+}
+
 
 function getSources() {
   var promise = $.Deferred();
