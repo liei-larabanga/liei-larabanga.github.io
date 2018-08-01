@@ -13,5 +13,8 @@ Config.map = {
     pitch: 0,
     hash: true // Allows storing maps position at the URL
   },
+  infoPanel: {
+    contents: [['h1', 'Liei-Larabanga', 'map-title']]
+  },
   interactionLayers: ['poi_z14','poi_z15','poi_z16','poi_transit']
 }

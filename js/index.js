@@ -10,10 +10,12 @@ var map;
 $(function() {
   map = new mapboxgl.Map(Config.map.settings);
 
+  //custom info control
+  map.addControl(new mapboxgl.InfoControl(Config.map.infoPanel));
   map.addControl(new mapboxgl.NavigationControl());
-  map.addControl(new mapboxgl.ScaleControl(), 'bottom-right');
   //custom pitch control
   map.addControl(new mapboxgl.PitchControl());
+  map.addControl(new mapboxgl.ScaleControl(), 'bottom-right');
 
   //map.addControl(new SidebarMapboxgl('sidebar'), 'top-left');
   //var sidebar = new SidebarMapboxgl('sidebar');
@@ -110,7 +112,7 @@ function getSources() {
 
   //for (var i=0; i < geojsonSources.length; i++) {
   for (var key in geojsonSources) {
-    remaining ++;
+    remaining++;
     var source = geojsonSources[key];
     loadGeojsonSource(source.url).done(function(k, s) {
       return function(geojson) {
