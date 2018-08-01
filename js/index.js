@@ -8,18 +8,7 @@ var app = new CartONG.Events();
 var map;
 
 $(function() {
-  map = new mapboxgl.Map({
-    container: 'map', // id of HTML element containing the map
-    //style: 'https://openmaptiles.github.io/osm-bright-gl-style/style-cdn.json', // Style location
-    //style: 'http://localhost:8080/mapstyles/osm-bright-gl-custom/osm-bright-larabanga_0.2.json', // Style location
-    style: 'http://localhost:8080/mapstyles/mapbox-streets-custom/mapbox-streets-custom_0.1.json', // Style location
-    //style: 'mapbox://styles/mapbox/streets-v9', // token required
-    center: [-1.860, 9.218], // initial map center
-    zoom: 15, // initial zoom level
-    bearing: 0, // Initial rotation angle
-    pitch: 0,
-    hash: true // Allows storing maps position at the URL
-  });
+  map = new mapboxgl.Map(Config.map.settings);
 
   map.addControl(new mapboxgl.NavigationControl());
   map.addControl(new mapboxgl.ScaleControl(), 'bottom-right');
@@ -57,10 +46,9 @@ $(function() {
   });
   */
 
-  var interactionLayers = ['poi_z14','poi_z15','poi_z16','poi_transit']
   map.on('mousemove', function (e) {
     var features = getMouseFeatures(e, {
-      layers: interactionLayers
+      layers: Config.map.interactionLayers
     });
     
     map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
@@ -68,7 +56,7 @@ $(function() {
   
   map.on('click', function (e) {
     var features = getMouseFeatures(e, {
-      layers: interactionLayers
+      layers: Config.map.interactionLayers
     });
     if (features.length) {
       var feature = features[0];
@@ -113,7 +101,7 @@ function getMouseFeatures(e, opts) {
   return features;
 }
 
-
+/*
 function getSources() {
   var promise = $.Deferred();
   var source;
@@ -154,3 +142,4 @@ function loadGeojsonSource(url) {
   }
   return promise;
 }
+*/
