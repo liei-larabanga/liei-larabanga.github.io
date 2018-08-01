@@ -53,7 +53,7 @@ $(function() {
 
   map.on('mousemove', function (e) {
     var features = getMouseFeatures(e, {
-      layers: Config.map.interactionLayers
+      layers: Config.map.interactionLayers[map.getStyle().name]
     });
     
     map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
@@ -61,7 +61,7 @@ $(function() {
   
   map.on('click', function (e) {
     var features = getMouseFeatures(e, {
-      layers: Config.map.interactionLayers
+      layers: Config.map.interactionLayers[map.getStyle().name]
     });
     if (features.length) {
       var feature = features[0];

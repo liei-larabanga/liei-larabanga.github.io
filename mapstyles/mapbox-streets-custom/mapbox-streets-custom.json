@@ -1,6 +1,6 @@
 {
   "version": 8,
-  "name": "Streets",
+  "name": "Custom Mapbox Streets",
   "metadata": {
     "mapbox:type": "template",
     "openmaptiles:version": "3.x"

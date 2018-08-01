@@ -16,5 +16,7 @@ Config.map = {
   infoPanel: {
     contents: [['h1', 'Liei-Larabanga', 'map-title']]
   },
-  interactionLayers: ['poi_z14','poi_z15','poi_z16','poi_transit']
+  interactionLayers: {
+    'Custom Mapbox Streets': ['poi_z14','poi_z15','poi_z16','poi_transit']
+  }
 }
