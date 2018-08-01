@@ -21,6 +21,9 @@ $(function() {
   //var sidebar = new SidebarMapboxgl('sidebar');
   var sidebar = turboSidebar('sidebar');
 
+  var dataContainer = sidebar.getPaneContentContainer('tab-display');
+  var dataDisplay = new AppComponents.DataDisplay(dataContainer);
+
   //var sidebar = L.control.sidebar('sidebar').addTo(map);
 
   /*
@@ -62,11 +65,17 @@ $(function() {
     });
     if (features.length) {
       var feature = features[0];
+      dataDisplay.update(feature);
+      sidebar.open('tab-display');
+      
+      /*
       var popup = new mapboxgl.Popup({ offset: [0, -15] })
       .setLngLat(feature.geometry.coordinates)
       .setHTML('<h3>' + feature.properties.name + '</h3><p>' + feature.properties.class + '</p>')
       .setLngLat(feature.geometry.coordinates)
       .addTo(map);
+      */
+
     }
 
   })
