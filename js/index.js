@@ -1,7 +1,4 @@
-//TODO: define sidebar structure
-//TODO: create event manager
-//TODO: build get data from vector tile features
-//TODO: create own vector tiles & styles... uff
+//TODO: create own vector tiles & styles... - vector tiles not satisfactory with tippecanoe
 //TODO:
 
 var app = new CartONG.Events();
@@ -23,8 +20,6 @@ $(function() {
 
   var dataContainer = sidebar.getPaneContentContainer('tab-display');
   var dataDisplay = new AppComponents.DataDisplay(dataContainer, map);
-
-  //var sidebar = L.control.sidebar('sidebar').addTo(map);
 
   /*
   getSources().done(function(sources) {  
