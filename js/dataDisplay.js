@@ -11,6 +11,9 @@ $(function() {
     params = params || {};
     return setParams(elements[type], params, clean);
   }
+  function capInitial(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
+}
 
   var elements = {
     //img: '<img src="{src}" alt="" class="{class}" "/>',
@@ -31,11 +34,11 @@ $(function() {
   var elementDefinition = {
     title: {
       type: 'h4',
-      class: 'row bold darkGrey'// data-title'
+      class: 'bold darkGrey'// data-title'
     },
     subtitle: {
       type: 'h6',
-      class: 'row italic bold lightGrey uppercase'
+      class: 'italic bold lightGrey'// uppercase'
     }
   };
 
@@ -119,7 +122,7 @@ $(function() {
             
             $dataTitleContainer.append(createElement(elementType, {
               class: elementClass,
-              content: value
+              content: cat == 'subtitle' ? capInitial(Dictionary[value] || value) : value
             }, true));
             
             index = keys.indexOf(key);
@@ -153,11 +156,11 @@ $(function() {
             if (value) {
               var keySpan = createElement('span', {
                 class: 'data-list-key',
-                content: key
+                content: capInitial(Dictionary[key] || key)
               }, true);
               var valueSpan = createElement('span', {
                 class: 'data-list-value',
-                content: value
+                content: capInitial(Dictionary[value] || value)
               }, true);
               $ul.append(createElement('li', {
                 content: keySpan + valueSpan
