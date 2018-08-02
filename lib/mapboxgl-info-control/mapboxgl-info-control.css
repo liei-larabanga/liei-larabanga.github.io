@@ -1,8 +1,17 @@
 .mapboxgl-ctrl-info {
   padding: 0.5rem 1.5rem 0rem;
+  text-align: right;
+  color: #4e4e4e;
 }
 .mapboxgl-ctrl-info p {
   margin-bottom: 0.4rem;
+}
+.mapboxgl-ctrl-info a {
+  color: #707070;
+}
+.mapboxgl-ctrl-info a:hover {
+  color: #aeaeae;
+  text-decoration: none;
 }
 @media only screen and (max-width: 500px) {
   .mapboxgl-ctrl-info {

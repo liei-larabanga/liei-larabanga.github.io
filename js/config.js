@@ -16,7 +16,10 @@ Config.map = {
     hash: true // Allows storing maps position at the URL
   },
   infoPanel: {
-    contents: [['h1', 'Liei-Larabanga', 'map-title']]
+    contents: [
+      ['h1', 'Liei-Larabanga.org', 'map-title'],
+      ['h5', '<a href="https://www.liei-ghana.org/" target="_blank">liei-ghana.org</a>', 'map-subtitle']
+    ]
   },
   interactionLayers: {
     'Custom Mapbox Streets': ['poi_z14','poi_z15','poi_z16','poi_transit']
