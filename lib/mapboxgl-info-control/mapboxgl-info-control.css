@@ -2,6 +2,7 @@
   padding: 0.5rem 1.5rem 0rem;
   text-align: right;
   color: #4e4e4e;
+  border-left: 20px solid #75a56a;
 }
 .mapboxgl-ctrl-info p {
   margin-bottom: 0.4rem;
