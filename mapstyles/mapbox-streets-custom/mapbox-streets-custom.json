@@ -276,7 +276,8 @@
       ],
       "layout": {
         "line-cap": "square",
-        "line-join": "miter"
+        "line-join": "miter",
+        "visibility": "visible"
       },
       "paint": {
         "line-dasharray": [
@@ -288,11 +289,11 @@
           "stops": [
             [
               8,
-              3
+              1
             ],
             [
               10,
-              4
+              3
             ]
           ]
         },
@@ -300,11 +301,11 @@
           "stops": [
             [
               8,
-              4
+              2
             ],
             [
               10,
-              8
+              6
             ]
           ]
         },
