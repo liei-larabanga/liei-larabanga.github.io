@@ -22,7 +22,7 @@ $(function() {
   var sidebar = turboSidebar('sidebar');
 
   var dataContainer = sidebar.getPaneContentContainer('tab-display');
-  var dataDisplay = new AppComponents.DataDisplay(dataContainer);
+  var dataDisplay = new AppComponents.DataDisplay(dataContainer, map);
 
   //var sidebar = L.control.sidebar('sidebar').addTo(map);
 
@@ -65,7 +65,7 @@ $(function() {
     });
     if (features.length) {
       var feature = features[0];
-      dataDisplay.update(feature);
+      dataDisplay.update(feature, Config.map.dataDisplay[map.getStyle().name]);
       sidebar.open('tab-display');
       
       /*
@@ -118,39 +118,39 @@ function getSources() {
   var source;
   var remaining = 0;
   var sources = {};
-
+  
   //for (var i=0; i < geojsonSources.length; i++) {
-  for (var key in geojsonSources) {
-    remaining++;
-    var source = geojsonSources[key];
-    loadGeojsonSource(source.url).done(function(k, s) {
-      return function(geojson) {
-        remaining--;
-        s.geojson = geojson;
-        sources[k] = s;
-        if (!remaining) {
-          promise.resolve(sources);
-        }
-      };
-    }(key, source));
-
+    for (var key in geojsonSources) {
+      remaining++;
+      var source = geojsonSources[key];
+      loadJSON(source.url).done(function(k, s) {
+        return function(geojson) {
+          remaining--;
+          s.geojson = geojson;
+          sources[k] = s;
+          if (!remaining) {
+            promise.resolve(sources);
+          }
+        };
+      }(key, source));
+      
+    }
+    
+    return promise;
   }
-
-  return promise;
-}
-
-function loadGeojsonSource(url) {
+  */
+  
+function loadJSON(url) {
   this.promise = $.Deferred();
-  var geojson = {};
+  var json = {};
   if (url === undefined) {
-    promise.resolve(geojson); // should be reject() but listeners should not have to deal with missing geojson
+    promise.resolve(json); // should be reject() but listeners should not have to deal with missing geojson
   } else {
-    $.getJSON(url).done(function(geojson) {
-      promise.resolve(geojson);
+    $.getJSON(url).done(function(json) {
+      promise.resolve(json);
     }).fail(function(err) {
-      promise.resolve(geojson); // should be reject() but listeners should not have to deal with missing geojson
+      promise.resolve(json); // should be reject() but listeners should not have to deal with missing geojson
     });
   }
   return promise;
 }
-*/
