@@ -1,0 +1,29 @@
+.mapboxgl-ctrl-info {
+  padding: 0.5rem 1.5rem 0rem;
+}
+.mapboxgl-ctrl-info p {
+  margin-bottom: 0.4rem;
+}
+@media only screen and (max-width: 500px) {
+  .mapboxgl-ctrl-info {
+    padding: 0.5rem 1rem 0rem;
+  }
+  .mapboxgl-ctrl-info h1 {
+    font-size: 1.4rem;
+  }
+  .mapboxgl-ctrl-info h2 {
+    font-size: 1.3rem;
+  }
+  .mapboxgl-ctrl-info h3 {
+    font-size: 1.2rem;
+  }
+  .mapboxgl-ctrl-info h4 {
+    font-size: 1.1rem;
+  }
+  .mapboxgl-ctrl-info h5 {
+    font-size: 1rem;
+  }
+  .mapboxgl-ctrl-info h6 {
+    font-size: 0.9rem;
+  }
+}

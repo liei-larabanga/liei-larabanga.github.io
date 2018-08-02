@@ -1,5 +1,5 @@
 html, body {
-  font-family: 'HankenBook';
+  /*font-family: 'HankenBook';*/
   margin: 0;
   height: 100%;
 }
@@ -16,4 +16,64 @@ html, body {
   /*height: calc(100% - 80px);*/
   height: 100%;
   /*padding: 1em;*/
+  font: inherit;
+}
+
+.sprite {
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+/*Text shortcuts*/
+.bold  {
+  font-weight: bold;
+}
+.italic  {
+  font-style: italic;
+}
+.darkGrey  {
+  color: #4e4e4e;
+}
+.lightGrey  {
+  color: #aeaeae;
+}
+.uppercase  {
+  text-transform: uppercase;
+}
+
+/*Icon shortcuts*/
+.left-icon {
+  margin-right: 15px;
+}
+
+/*Sidebar custom style*/
+.sidebar .sidebar-tabs > li.active, .sidebar-tabs > ul > li.active {
+  background-color: #75a56a;
+}
+.sidebar .row {
+  margin-bottom: 15px;
+}
+.sidebar .sidebar-header {
+  background-color: #75a56a;
+}
+.sidebar .title-row {
+  display: inline-flex;
+}
+/*.sidebar .data-title {
+  padding-top: 5px;
+}*/
+.sidebar ul {
+  padding: 0;
+}
+.sidebar li {
+  list-style-type: none;
+  margin-bottom: 5px;
+}
+.sidebar .data-list-key {
+  font-weight: bold;
+}
+.sidebar .data-list-value {
+  padding: 20px;
 }
