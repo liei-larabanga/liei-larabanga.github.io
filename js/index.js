@@ -24,7 +24,7 @@ $(function() {
   var mapOptionsUI = new AppComponents.MapOptions(mapOptionsContainer, map);
   
   map.on('load', function() {
-  
+    /*
     //var icons;
     loadIcons(map).done(function(iconCache) {
       //icons = iconCache;
@@ -54,12 +54,12 @@ $(function() {
       });
           
     });
-          
+    */    
           
     map.on('mousemove', function (e) {
       var features = getMouseFeatures(e, {
         //layers: Config.map.interactionLayers[map.getStyle().name]
-        layers: Config.map.interactionLayers[map.getStyle().name].concat(Object.keys(geojsonLayers))
+        layers: Config.map.interactionLayers[map.getStyle().name]//.concat(Object.keys(geojsonLayers))
       });
       
       map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
@@ -67,7 +67,7 @@ $(function() {
     
     map.on('click', function (e) {
       var features = getMouseFeatures(e, {
-        layers: Config.map.interactionLayers[map.getStyle().name].concat(Object.keys(geojsonLayers)) //a.concat(b)
+        layers: Config.map.interactionLayers[map.getStyle().name]//.concat(Object.keys(geojsonLayers)) //a.concat(b)
       });
       if (features.length) {
         var feature = features[0];
