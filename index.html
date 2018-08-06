@@ -10,7 +10,7 @@
   <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/hanken" type="text/css"/>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 
-  <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' />
+  <link rel='stylesheet' href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' />
   <link rel="stylesheet" href="lib/mapboxgl-info-control/mapboxgl-info-control.css" />
   
   <link rel="stylesheet" href="lib/turbo-sidebar-v2/0.1/turbo-sidebar.css" />
@@ -42,13 +42,14 @@
           
       <!-- Tab panes -->
       <div class="sidebar-content">
-
-        <div class="sidebar-pane" id="tab-map">
-          <h1 class="sidebar-header">Map<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
-        </div>
         
         <div class="sidebar-pane" id="tab-display">
           <h1 class="sidebar-header">Information<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
+          <div class="pane-content"></div>
+        </div>
+        
+        <div class="sidebar-pane" id="tab-map">
+          <h1 class="sidebar-header">Map<span class="sidebar-close"><i class="fa fa-caret-left"></i></span></h1>
           <div class="pane-content"></div>
         </div>
 
@@ -62,7 +63,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
     
-  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
   
   <script src="lib/mapboxgl-pitch-control/mapboxgl-pitch-control.js"></script>
   <script src="lib/mapboxgl-info-control/mapboxgl-info-control.js"></script>
@@ -70,11 +71,15 @@
 
   <script src="lib/cartong/events.js"></script>
 
-  <!--script src="mapstyles/geojsonConfig.js"></script-->
+  <script src="mapstyles/geojsonConfig.js"></script>
+  <script src="mapstyles/iconIndex.js"></script>
 
   <script src="js/config.js"></script>
   <script src="js/dictionary.js"></script>
+  <script src="js/iconLoad.js"></script>
   <script src="js/dataDisplay.js"></script>
+  <script src="js/mapOptions.js"></script>
+  <script src="js/jsonSource.js"></script>
   <script src="js/index.js"></script>
 
 </body>

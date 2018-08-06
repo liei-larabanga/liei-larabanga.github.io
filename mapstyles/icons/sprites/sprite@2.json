@@ -1,0 +1,226 @@
+{
+  "airplane": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 0,
+    "y": 0
+  },
+  "attraction": {
+    "height": 1018,
+    "pixelRatio": 2,
+    "width": 1018,
+    "x": 5120,
+    "y": 0
+  },
+  "bench": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 1024,
+    "y": 0
+  },
+  "binoculars": {
+    "height": 1008,
+    "pixelRatio": 2,
+    "width": 1008,
+    "x": 7144,
+    "y": 1024
+  },
+  "busstop": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 0,
+    "y": 1024
+  },
+  "classroom": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 1024,
+    "y": 1024
+  },
+  "clinic": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 2048,
+    "y": 0
+  },
+  "club": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 3072,
+    "y": 0
+  },
+  "communicationtower": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 2048,
+    "y": 1024
+  },
+  "construction": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 3072,
+    "y": 1024
+  },
+  "crossing": {
+    "height": 910,
+    "pixelRatio": 2,
+    "width": 910,
+    "x": 5983,
+    "y": 3072
+  },
+  "dinnerplate": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 0,
+    "y": 2048
+  },
+  "firstaid-kit": {
+    "height": 1008,
+    "pixelRatio": 2,
+    "width": 1008,
+    "x": 4096,
+    "y": 2048
+  },
+  "gate": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 1024,
+    "y": 2048
+  },
+  "government": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 2048,
+    "y": 2048
+  },
+  "governmentoffice": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 3072,
+    "y": 2048
+  },
+  "infosign": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 0,
+    "y": 3072
+  },
+  "library": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 1024,
+    "y": 3072
+  },
+  "lodging": {
+    "height": 1008,
+    "pixelRatio": 2,
+    "width": 1008,
+    "x": 5104,
+    "y": 2048
+  },
+  "meeting": {
+    "height": 1016,
+    "pixelRatio": 2,
+    "width": 1016,
+    "x": 6138,
+    "y": 0
+  },
+  "meetinghall": {
+    "height": 785,
+    "pixelRatio": 2,
+    "width": 785,
+    "x": 6893,
+    "y": 3072
+  },
+  "restaurant": {
+    "height": 1008,
+    "pixelRatio": 2,
+    "width": 1008,
+    "x": 6112,
+    "y": 2048
+  },
+  "reunion": {
+    "height": 1016,
+    "pixelRatio": 2,
+    "width": 1016,
+    "x": 7154,
+    "y": 0
+  },
+  "school": {
+    "height": 940,
+    "pixelRatio": 2,
+    "width": 940,
+    "x": 5043,
+    "y": 3072
+  },
+  "shopping-basket": {
+    "height": 1016,
+    "pixelRatio": 2,
+    "width": 1016,
+    "x": 4096,
+    "y": 1024
+  },
+  "shopping-cart": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 2048,
+    "y": 3072
+  },
+  "signaltower": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 3072,
+    "y": 3072
+  },
+  "soccerball": {
+    "height": 1016,
+    "pixelRatio": 2,
+    "width": 1016,
+    "x": 5112,
+    "y": 1024
+  },
+  "team": {
+    "height": 1016,
+    "pixelRatio": 2,
+    "width": 1016,
+    "x": 6128,
+    "y": 1024
+  },
+  "tower": {
+    "height": 947,
+    "pixelRatio": 2,
+    "width": 947,
+    "x": 7120,
+    "y": 2048
+  },
+  "traffichump": {
+    "height": 1024,
+    "pixelRatio": 2,
+    "width": 1024,
+    "x": 4096,
+    "y": 0
+  },
+  "trafficsign": {
+    "height": 947,
+    "pixelRatio": 2,
+    "width": 947,
+    "x": 4096,
+    "y": 3072
+  }
+}

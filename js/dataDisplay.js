@@ -119,14 +119,16 @@ $(function() {
           if (value) {            
             var elementType = elementDefinition[cat].type;
             var elementClass = elementDefinition[cat].class;
-            
-            $dataTitleContainer.append(createElement(elementType, {
-              class: elementClass,
-              content: cat == 'subtitle' ? capInitial(Dictionary[value] || value) : value
-            }, true));
-            
-            index = keys.indexOf(key);
-            keys.splice(index, 1);
+            var validValue = (value && value != '' && value != 'null');
+            if (validValue) {
+              $dataTitleContainer.append(createElement(elementType, {
+                class: elementClass,
+                content: cat == 'subtitle' ? capInitial(Dictionary[value] || value) : value
+              }, true));
+              
+              index = keys.indexOf(key);
+              keys.splice(index, 1);
+            }
           }
         }
       }
@@ -153,7 +155,7 @@ $(function() {
           key = keys[i];
           if (opts.hide.indexOf(key) == -1) {
             value = feature.properties[key];
-            if (value) {
+            if (value && value != '' && value != 'null') {
               var keySpan = createElement('span', {
                 class: 'data-list-key',
                 content: capInitial(Dictionary[key] || key)

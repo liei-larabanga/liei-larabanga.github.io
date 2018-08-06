@@ -23,6 +23,7 @@ Config.map = {
   },
   interactionLayers: {
     'Custom Mapbox Streets': ['poi_z14','poi_z15','poi_z16','poi_transit']
+    //'tourism': ['poi_z14','poi_z15','poi_z16','poi_transit']
   },
   dataDisplay: {
     'Custom Mapbox Streets': {

@@ -20,58 +20,71 @@ $(function() {
 
   var dataContainer = sidebar.getPaneContentContainer('tab-display');
   var dataDisplay = new AppComponents.DataDisplay(dataContainer, map);
-
-  /*
-  getSources().done(function(sources) {  
-    for (var key in sources) {
-      map.addSource(key, {
-        type: 'geojson',
-        data: sources[key].geojson,
-      });
-    }
-    
-    // Find the index of the first symbol layer in the map style
-    //var firstSymbolId;
-    //for (var i = 0; i < layers.length; i++) {
-    //    if (layers[i].type === 'symbol') {
-    //        firstSymbolId = layers[i].id;
-    //        break;
-    //    }
-    //}
-
-    for (var i=0; i < geojsonStyles.length; i++) {
-      map.addLayer(geojsonStyles[i]);
-      //map.addLayer(geojsonStyles[i], firstSymbolId);
-    }
-  });
-  */
-
-  map.on('mousemove', function (e) {
-    var features = getMouseFeatures(e, {
-      layers: Config.map.interactionLayers[map.getStyle().name]
-    });
-    
-    map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-  });
+  var mapOptionsContainer = sidebar.getPaneContentContainer('tab-map');
+  var mapOptionsUI = new AppComponents.MapOptions(mapOptionsContainer, map);
   
-  map.on('click', function (e) {
-    var features = getMouseFeatures(e, {
-      layers: Config.map.interactionLayers[map.getStyle().name]
-    });
-    if (features.length) {
-      var feature = features[0];
-      dataDisplay.update(feature, Config.map.dataDisplay[map.getStyle().name]);
-      sidebar.open('tab-display');
-      
-      /*
-      var popup = new mapboxgl.Popup({ offset: [0, -15] })
-      .setLngLat(feature.geometry.coordinates)
-      .setHTML('<h3>' + feature.properties.name + '</h3><p>' + feature.properties.class + '</p>')
-      .setLngLat(feature.geometry.coordinates)
-      .addTo(map);
-      */
+  map.on('load', function() {
+  
+    //var icons;
+    loadIcons(map).done(function(iconCache) {
+      //icons = iconCache;
+      getJSONSources(geojsonLayers, 'src').done(function(sources) {
+        
+        for (var key in sources) {
+          sources[key].addTo(map);
+        }
+        
+        //this is to add layers below labels
+        // Find the index of the first symbol layer in the map style
+        //var firstSymbolId;
+        //for (var i = 0; i < layers.length; i++) {
+          //    if (layers[i].type === 'symbol') {
+            //        firstSymbolId = layers[i].id;
+            //        break;
+            //    }
+            //}
+        for (var i=0; i < layerStyles.length; i++) {
+          //TODO: control source ok
+          map.addLayer(layerStyles[i]);
+          //map.addLayer(layerStyles[i], firstSymbolId);
+        }
 
-    }
+        //mapOptionsUI.update(layerStyles);
+
+      });
+          
+    });
+          
+          
+    map.on('mousemove', function (e) {
+      var features = getMouseFeatures(e, {
+        //layers: Config.map.interactionLayers[map.getStyle().name]
+        layers: Config.map.interactionLayers[map.getStyle().name].concat(Object.keys(geojsonLayers))
+      });
+      
+      map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+    });
+    
+    map.on('click', function (e) {
+      var features = getMouseFeatures(e, {
+        layers: Config.map.interactionLayers[map.getStyle().name].concat(Object.keys(geojsonLayers)) //a.concat(b)
+      });
+      if (features.length) {
+        var feature = features[0];
+        dataDisplay.update(feature, Config.map.dataDisplay[map.getStyle().name]);
+        sidebar.open('tab-display');
+        
+        /*
+        var popup = new mapboxgl.Popup({ offset: [0, -15] })
+        .setLngLat(feature.geometry.coordinates)
+        .setHTML('<h3>' + feature.properties.name + '</h3><p>' + feature.properties.class + '</p>')
+        .setLngLat(feature.geometry.coordinates)
+        .addTo(map);
+        */
+
+      }
+
+    });
 
   })
   
@@ -107,45 +120,40 @@ function getMouseFeatures(e, opts) {
   return features;
 }
 
-/*
-function getSources() {
+
+function getJSONSources(config, srcKey) {
   var promise = $.Deferred();
   var source;
   var remaining = 0;
   var sources = {};
   
-  //for (var i=0; i < geojsonSources.length; i++) {
-    for (var key in geojsonSources) {
-      remaining++;
-      var source = geojsonSources[key];
-      loadJSON(source.url).done(function(k, s) {
-        return function(geojson) {
-          remaining--;
-          s.geojson = geojson;
-          sources[k] = s;
-          if (!remaining) {
-            promise.resolve(sources);
-          }
-        };
-      }(key, source));
-      
-    }
-    
-    return promise;
+  for (var key in config) {
+    remaining++;
+    sources[key] = new AppComponents.JSONSource(key, config[key][srcKey]);
+    sources[key].load().done(function() {
+      remaining--;
+      if (!remaining) {
+        promise.resolve(sources);
+      }
+    });
   }
-  */
+  
+  return promise;
+}
   
 function loadJSON(url) {
-  this.promise = $.Deferred();
-  var json = {};
+  var promise = $.Deferred();
+  //var json = {};
   if (url === undefined) {
-    promise.resolve(json); // should be reject() but listeners should not have to deal with missing geojson
+    promise.resolve({}); // should be reject() but listeners should not have to deal with missing geojson
   } else {
-    $.getJSON(url).done(function(json) {
-      promise.resolve(json);
-    }).fail(function(err) {
-      promise.resolve(json); // should be reject() but listeners should not have to deal with missing geojson
-    });
+    $.getJSON(url)
+      .done(function(json) {
+        promise.resolve(json);
+      })
+      .fail(function(err) {
+        promise.resolve({}); // should be reject() but listeners should not have to deal with missing geojson
+      });
   }
   return promise;
 }
