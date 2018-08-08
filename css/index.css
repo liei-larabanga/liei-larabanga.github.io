@@ -67,7 +67,7 @@ html, body {
 .sidebar ul {
   padding: 0;
 }
-.sidebar li {
+.sidebar .pane-content li {
   list-style-type: none;
   margin-bottom: 5px;
 }
@@ -76,4 +76,31 @@ html, body {
 }
 .sidebar .data-list-value {
   padding: 20px;
+}
+
+/*.sidebar .layer-list-item {
+ cursor: pointer;
+}
+.sidebar .layer-list-item:hover {
+  font-weight: bold
+}
+.sidebar .layer-list-item:hover .layer-toggle {
+  font-weight: bold
+}*/
+.sidebar .layer-list-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  border: none;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.sidebar .layer-toggle {
+  cursor: pointer;
+  float: right;
+}
+.sidebar .layer-toggle:hover, .sidebar .layer-toggle:hover:parent {
+  font-weight: bold
 }

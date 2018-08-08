@@ -30,7 +30,7 @@ var geojsonLayers = {
       //"filter": ["==", "$type", "Point"],
       "layout": {
           "icon-image": "other_pink", //related to iconIndex id
-          "icon-size": 0.1
+          "icon-size": 1
       }
     },
     {
@@ -40,7 +40,7 @@ var geojsonLayers = {
       //"filter": ["==", "$type", "Point"],
       "layout": {
           "icon-image": "other_yellow", //related to iconIndex id
-          "icon-size": 0.1
+          "icon-size": 1
       }
     },
     {
@@ -50,7 +50,7 @@ var geojsonLayers = {
       //"filter": ["==", "$type", "Point"],
       "layout": {
           "icon-image": "other_cyan", //related to iconIndex id
-          "icon-size": 0.1
+          "icon-size": 1
       }
     },
     {
@@ -60,7 +60,7 @@ var geojsonLayers = {
       //"filter": ["==", "$type", "Point"],
       "layout": {
           "icon-image": "other_blue", //related to iconIndex id
-          "icon-size": 0.1
+          "icon-size": 1
       }
     },
     {
@@ -70,7 +70,7 @@ var geojsonLayers = {
       //"filter": ["==", "$type", "Point"],
       "layout": {
           "icon-image": "other_red", //related to iconIndex id
-          "icon-size": 0.1
+          "icon-size": 1
       }
     }
   /*{//building base

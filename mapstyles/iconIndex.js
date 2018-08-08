@@ -1,57 +1,59 @@
 var iconIndex = {
-  binoculars: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/binoculars.svg',
+  /*binoculars: {
+    //'src': 'mapstyles/icons/svg/binoculars.svg',
     //'src': 'mapstyles/icons/svg/binoculars.svg',
     'size': 1
-  },
+  },*/
   other_beige: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_beige.svg',
     //'src': 'mapstyles/icons/svg/other_beige.svg',
+    'src': 'mapstyles/icons/png/other_beige_16px.png',
     'size': 1
   },
   other_blue: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_blue.svg',
     //'src': 'mapstyles/icons/svg/other_blue.svg',
+    'src': 'mapstyles/icons/png/other_blue_16px.png',
+    //'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/png/other_blue_40px.png',
+    
     'size': 1
   },
   other_cyan: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_cyan.svg',
     //'src': 'mapstyles/icons/svg/other_cyan.svg',
+    'src': 'mapstyles/icons/png/other_cyan_16px.png',
     'size': 1
   },
   other_darkgrey: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_darkgrey.svg',
     //'src': 'mapstyles/icons/svg/other_darkgrey.svg',
+    'src': 'mapstyles/icons/png/other_darkgrey_16px.png',
     'size': 1
   },
   other_green: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_green.svg',
     //'src': 'mapstyles/icons/svg/other_green.svg',
+    'src': 'mapstyles/icons/png/other_green_16px.png',
     'size': 1
   },
   other_lightgrey: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_lightgrey.svg',
     //'src': 'mapstyles/icons/svg/other_lightgrey.svg',
+    'src': 'mapstyles/icons/png/other_lightgrey_16px.png',
     'size': 1
   },
   other_pink: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_pink.svg',
     //'src': 'mapstyles/icons/svg/other_pink.svg',
+    'src': 'mapstyles/icons/png/other_pink_16px.png',
     'size': 1
   },
   other_red: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_red.svg',
     //'src': 'mapstyles/icons/svg/other_red.svg',
+    'src': 'mapstyles/icons/png/other_red_16px.png',
     'size': 1
   },
   other_yellow: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_yellow.svg',
     //'src': 'mapstyles/icons/svg/other_yellow.svg',
+    'src': 'mapstyles/icons/png/other_yellow_16px.png',
     'size': 1
   },
   other: {
-    'src': 'https://raw.githubusercontent.com/liei-larabanga/liei-larabanga.github.io/master/mapstyles/icons/svg/other_lightgrey.svg',
     //'src': 'mapstyles/icons/svg/other_lightgrey.svg',
+    'src': 'mapstyles/icons/png/other_lightgrey_16px.png',
     'size': 1
   }
 }

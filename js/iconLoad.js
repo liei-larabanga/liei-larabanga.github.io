@@ -1,16 +1,16 @@
 function loadIcons(map) {
   var promise = $.Deferred();
-  var pending;
+  var remaining;
   var iconCache = {};
 
   for (var key in iconIndex) {
     var icon = iconIndex[key];
     
     if (!iconCache[key]) {
-      pending++;
+      remaining++;
       loadImage(icon.src).done(function(k, i) {
         return function(img) {
-          pending--;
+          remaining--;
           iconCache[k] = {
             image: img,
             size: i.size
@@ -18,7 +18,7 @@ function loadIcons(map) {
 
           map.addImage(k, img);
 
-          if (!pending) { promise.resolve(iconCache); }
+          if (!remaining) { promise.resolve(iconCache); }
         }
       }(key, icon));
     }

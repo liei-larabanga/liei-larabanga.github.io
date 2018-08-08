@@ -25,6 +25,7 @@ $(function() {
   
   map.on('load', function() {
     /*
+   */    
     //var icons;
     loadIcons(map).done(function(iconCache) {
       //icons = iconCache;
@@ -43,47 +44,49 @@ $(function() {
             //        break;
             //    }
             //}
+
+        map.geojsonLayers = [];
         for (var i=0; i < layerStyles.length; i++) {
           //TODO: control source ok
           map.addLayer(layerStyles[i]);
+          map.geojsonLayers.push(layerStyles[i].id);
           //map.addLayer(layerStyles[i], firstSymbolId);
         }
-
-        //mapOptionsUI.update(layerStyles);
-
-      });
-          
-    });
-    */    
-          
-    map.on('mousemove', function (e) {
-      var features = getMouseFeatures(e, {
-        //layers: Config.map.interactionLayers[map.getStyle().name]
-        layers: Config.map.interactionLayers[map.getStyle().name]//.concat(Object.keys(geojsonLayers))
-      });
-      
-      map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
-    });
-    
-    map.on('click', function (e) {
-      var features = getMouseFeatures(e, {
-        layers: Config.map.interactionLayers[map.getStyle().name]//.concat(Object.keys(geojsonLayers)) //a.concat(b)
-      });
-      if (features.length) {
-        var feature = features[0];
-        dataDisplay.update(feature, Config.map.dataDisplay[map.getStyle().name]);
-        sidebar.open('tab-display');
         
-        /*
-        var popup = new mapboxgl.Popup({ offset: [0, -15] })
-        .setLngLat(feature.geometry.coordinates)
-        .setHTML('<h3>' + feature.properties.name + '</h3><p>' + feature.properties.class + '</p>')
-        .setLngLat(feature.geometry.coordinates)
-        .addTo(map);
-        */
-
-      }
-
+        mapOptionsUI.update(layerStyles);
+        
+        map.on('mousemove', function (e) {
+          var features = getMouseFeatures(e, {
+            //layers: Config.map.interactionLayers[map.getStyle().name]
+            layers: Config.map.interactionLayers[map.getStyle().name].concat(map.geojsonLayers)
+          });
+          
+          map.getCanvas().style.cursor = (features.length) ? 'pointer' : '';
+        });
+        
+        map.on('click', function (e) {
+          var features = getMouseFeatures(e, {
+            layers: Config.map.interactionLayers[map.getStyle().name].concat(map.geojsonLayers) //a.concat(b)
+          });
+          if (features.length) {
+            var feature = features[0];
+            dataDisplay.update(feature, Config.map.dataDisplay[map.getStyle().name]);
+            sidebar.open('tab-display');
+            
+            /*
+            var popup = new mapboxgl.Popup({ offset: [0, -15] })
+            .setLngLat(feature.geometry.coordinates)
+            .setHTML('<h3>' + feature.properties.name + '</h3><p>' + feature.properties.class + '</p>')
+            .setLngLat(feature.geometry.coordinates)
+            .addTo(map);
+            */
+           
+          }
+          
+        });
+        
+      });
+          
     });
 
   })
