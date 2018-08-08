@@ -70,29 +70,34 @@ $(function() {
         value = key;//feature.properties[key];
         if (value && value != '' && value != 'null') {
           
-          var iconImageSrc = iconIndex[layers[index].layout['icon-image']].src;
           
           var layerIcon = createElement('span', {
             id: 'layer-icon-'+ key,
             class: 'layer-list-icon'
           }, true);
-
+          
+          var isVisible = (layers[index].layout && layers[index].layout.visibility && layers[index].layout.visibility == 'none') ? false : true;
           var hideIcon = createElement('fa', {
             name: key,
-            class: 'far fa-eye-slash layer-toggle',
+            //class: 'layer-toggle far ' + (isVisible ? 'fa-eye-slash' : 'fa-eye'),
+            class: 'layer-toggle far ' + (isVisible ? 'fa-check-square' : 'fa-square'), //far fa-check-square
           }, true);
-
+          
           
           $ul.append(createElement('li', {
             //name: key,
             class: 'layer-list-item',
             content: layerIcon + capInitial(Dictionary[key] || key) + hideIcon//keySpan// + valueSpan
           }, true));
-
+          
           var $icon = $(this.$container.children().find('#layer-icon-'+ key));
-          $icon.css('background-image', 'url('+ iconImageSrc +')');
           $icon.css('width', '20px');
           $icon.css('height', '20px');
+          
+          if (layers[index].type == 'symbol' && layers[index].layout['icon-image']) {
+            var iconImageSrc = iconIndex[layers[index].layout['icon-image']].src;
+            $icon.css('background-image', 'url('+ iconImageSrc +')');
+          }
 
         }
 
@@ -104,20 +109,28 @@ $(function() {
       var layer = $(e.target).attr('name');
       var index = map.geojsonLayers.indexOf(layer);
 
+      
+      
       if (index > -1) { //if layer is on the map --> hide
-        map.removeLayer(layer);
+        map.setLayoutProperty(layer, 'visibility', 'none');
+        //map.removeLayer(layer);
         map.geojsonLayers.splice(index, 1);
         
         $(e.target)//.find('.layer-toggle')
-          .removeClass('fa-eye-slash')
-          .addClass('fa-eye');
+          //.removeClass('fa-eye-slash')
+          //.addClass('fa-eye');
+          .removeClass('fa-check-square')
+          .addClass('fa-square');
       }
       else { //--> show layer
-        map.addLayer(layerStyles[keys[layer]]);
+        map.setLayoutProperty(layer, 'visibility', 'visible');
+        //map.addLayer(layerStyles[keys[layer]]);
         map.geojsonLayers.push(layer);
         $(e.target)//.find('.layer-toggle')
-         .removeClass('fa-eye')
-         .addClass('fa-eye-slash');
+          //.removeClass('fa-eye')
+          //.addClass('fa-eye-slash');
+          .removeClass('fa-square')
+          .addClass('fa-check-square');
       }
 
     })

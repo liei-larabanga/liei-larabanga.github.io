@@ -17,11 +17,13 @@ $(function() {
   //map.addControl(new SidebarMapboxgl('sidebar'), 'top-left');
   //var sidebar = new SidebarMapboxgl('sidebar');
   var sidebar = turboSidebar('sidebar');
-
+  
   var dataContainer = sidebar.getPaneContentContainer('tab-display');
   var dataDisplay = new AppComponents.DataDisplay(dataContainer, map);
   var mapOptionsContainer = sidebar.getPaneContentContainer('tab-map');
   var mapOptionsUI = new AppComponents.MapOptions(mapOptionsContainer, map);
+  
+  sidebar.open('tab-map');
   
   map.on('load', function() {
     /*
@@ -45,12 +47,18 @@ $(function() {
             //    }
             //}
 
+
+        //TODO: stop relying on this array and start using visibility property!
         map.geojsonLayers = [];
         for (var i=0; i < layerStyles.length; i++) {
           //TODO: control source ok
+
           map.addLayer(layerStyles[i]);
-          map.geojsonLayers.push(layerStyles[i].id);
           //map.addLayer(layerStyles[i], firstSymbolId);
+          var isVisible = (layerStyles[i].layout && layerStyles[i].layout.visibility && layerStyles[i].layout.visibility == 'none') ? false : true;
+          if (isVisible) {
+            map.geojsonLayers.push(layerStyles[i].id);
+          }
         }
         
         mapOptionsUI.update(layerStyles);
