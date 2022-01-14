@@ -52,7 +52,7 @@ var iconIndex = {
     'size': 1
   },
   other_orange: {
-    //'src': 'mapstyles/icons/svg/other_yellow.svg',
+    //'src': 'mapstyles/icons/svg/other_orange.svg',
     'src': 'mapstyles/icons/png/other_orange_16px.png',
     'size': 1
   },

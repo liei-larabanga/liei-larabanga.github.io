@@ -27,7 +27,23 @@ $(function() {
   
   map.on('load', function() {
     /*
-   */    
+    // create a DOM element for the marker
+    var el = document.createElement('div');
+    el.className = 'marker';
+    el.innerHTML = '<img src="'+iconIndex.other_pink.src+'" alt="X">';
+    //el.style.backgroundImage = iconIndex.other_pink.src;
+    el.style.width = '50px';
+    el.style.height = '50px';
+
+    var marker = new mapboxgl.Marker({
+      //color: "#FFFFFF",
+      //draggable: true
+      element: el
+    })
+    .setLngLat([-2, 9])
+    .addTo(map);
+    */
+
     //var icons;
     loadIcons(map).done(function(iconCache) {
       //icons = iconCache;
